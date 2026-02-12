@@ -1,0 +1,110 @@
+Location: Bachupally, Hyderabad, Telangana,pincode is 500090
+
+Established: 1995
+
+Affiliation: JNTUH, Hyderabad
+
+Accreditations: AICTE, NAAC (A++), NBA
+
+Principal: Dr. B. Chennakesava Rao
+
+Students: ~6,300
+
+Faculty: ~340
+
+Departments & Branches
+Computer Science and Engineering (CSE)
+
+CSE – AI & ML, Data Science, Cyber Security, IoT, AI & DS
+
+Information Technology (IT)
+
+Electronics and Communication Engineering (ECE)
+
+Electrical and Electronics Engineering (EEE)
+
+Electronics and Instrumentation Engineering (EIE)
+
+Mechanical Engineering (ME)
+
+Civil Engineering (CE)
+
+Automobile Engineering (AE)
+
+Chemical Engineering (ChE)
+
+Biotechnology (BT)
+
+Basic Sciences & Humanities
+
+(Each department has a Head of Department (HOD), updated yearly. For chatbot purposes, store as “HOD: [Name – updated yearly]”)
+
+Admissions
+Entrance Exams: TS EAPCET, AP EAPCET, TS PGECET, GATE
+
+Exam Dates (2026):
+
+TS EAPCET (Engineering): May 9–11
+
+AP EAPCET (Engineering): May 12–15 & May 18
+
+TS PGECET (PG): May 28–31
+
+Fee Structure (2026)
+B.Tech (Convener Quota): ₹1,35,000 per year (Telangana Govt. order)
+
+B.Tech (Management Quota): ₹5.4 Lakhs (entire 4 years)
+
+M.Tech: ₹86,500 – ₹2.6 Lakhs (depending on specialization)
+
+Hostel Fees: ~₹60,000 – ₹80,000 per year (varies by facility)
+
+Fee Reimbursement (Telangana Govt.)
+Eligible students under EWS, BC, SC, ST categories can apply for fee reimbursement through Telangana State Govt. portal.
+
+Reimbursement covers Convener Quota tuition fees (₹1,35,000 per year).
+
+Students must submit income certificate, caste certificate, EAMCET rank card, and bonafide certificates during admission.
+
+Transport – Bus Routes
+VNRVJIET provides college buses covering major areas of Hyderabad.
+
+Key Routes (TSRTC + College Buses):
+
+187P, 195W/P, 224G (TSRTC buses passing near campus)
+
+219/229 (Patancheru ↔ Medchal, stops near Bachupally)
+
+Areas Covered by College Buses:
+
+Kukatpally, Miyapur, BHEL, Patancheru, Medchal, Secunderabad, Ameerpet, Dilsukhnagar, LB Nagar, Uppal, ECIL, Mehdipatnam, Gachibowli, Madhapur, Kondapur, Bowenpally, Kompally.
+
+Approximate Travel Times (via public transport):
+
+From Cyber Gateway (Hitech City): ~54 min
+
+From University of Hyderabad: ~79 min
+
+From Borabanda: ~94 min
+
+From Medchal: ~50–57 min
+
+Placements
+Recruiters: Infosys, TCS, Wipro, Deloitte, Microsoft, Amazon, Accenture, Cognizant
+
+Placement Rate: ~90%+
+
+Average Package: ₹4–6 LPA
+
+Highest Package: ₹40+ LPA (international offers)
+
+Facilities are:
+Central Library (digital + physical)
+
+AICTE IDEA Lab, Research Centers
+
+Modern labs for each branch
+
+Hostels, Cafeteria, Sports Complex
+
+Annual fests: Convergence, Sports Fest, Hackathons
