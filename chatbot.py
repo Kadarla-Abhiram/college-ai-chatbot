@@ -6,27 +6,33 @@ load_dotenv()
 
 client = Groq(api_key=os.getenv("GROQ_API_KEY"))
 
+# Load FAQ content once
+with open("college_faq.txt", "r", encoding="utf-8") as f:
+    FAQ_DATA = f.read()
 
-def get_bot_response(user_message: str) -> str:
+
+def get_bot_response(user_msg):
+    prompt = f"""
+You are an AI assistant for VNR VJIET college.
+
+Answer the user's question ONLY using the information below.
+If the answer is not in the FAQ, reply:
+"Sorry, I can only answer questions related to VNR VJIET college."
+
+FAQ:
+{FAQ_DATA}
+
+User question: {user_msg}
+"""
+
     try:
-        response = client.chat.completions.create(
+        chat_completion = client.chat.completions.create(
+            messages=[{"role": "user", "content": prompt}],
             model="llama-3.1-8b-instant",
-            messages=[
-                {
-                    "role": "system",
-                    "content": "You are a helpful college assistant chatbot for students."
-                },
-                {
-                    "role": "user",
-                    "content": user_message
-                }
-            ],
-            temperature=0.7,
-            max_tokens=300,
+            temperature=0.2,
         )
 
-        return response.choices[0].message.content
+        return chat_completion.choices[0].message.content
 
     except Exception as e:
-        return "Error: " + str(e)
-
+        return f"Error: {str(e)}"
