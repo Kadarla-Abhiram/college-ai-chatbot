@@ -1,121 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>VNR VJIET AI Assistant</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VNR VJIET AI Assistant</title>
 
-<style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Segoe UI", sans-serif;
-}
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
 
-/* 🌈 Soft pastel light background */
-body {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: linear-gradient(135deg, #e3f2fd, #f3e5f5, #e1f5fe);
-}
+            /* Soft modern background */
+            background: linear-gradient(135deg, #eef2ff, #f8fafc);
 
-/* Chat container */
-.chat-container {
-    width: 360px;
-    height: 600px;
-    background: rgba(255, 255, 255, 0.75);
-    border-radius: 18px;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
 
-    /* ✨ glass effect */
-    backdrop-filter: blur(6px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
-}
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        }
 
-/* Header */
-.chat-header {
-    background: #4f8cff;
-    color: white;
-    padding: 16px;
-    font-weight: bold;
-    text-align: center;
-    font-size: 18px;
-}
+        .chat-container {
+            width: 380px;
+            height: 560px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 
-/* Messages area */
-.chat-box {
-    flex: 1;
-    padding: 15px;
-    overflow-y: auto;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
 
-/* Bot message */
-.bot-message {
-    background: #eef2ff;
-    padding: 10px 14px;
-    border-radius: 12px;
-    max-width: 80%;
-    font-size: 14px;
-    color: #333;
-}
+        .chat-header {
+            background: #4f8cff;
+            color: white;
+            padding: 16px;
+            font-weight: bold;
+            text-align: center;
+            font-size: 18px;
+        }
 
-/* User message */
-.user-message {
-    background: #4f8cff;
-    color: white;
-    padding: 10px 14px;
-    border-radius: 12px;
-    max-width: 80%;
-    align-self: flex-end;
-    font-size: 14px;
-}
+        .chat-box {
+            flex: 1;
+            padding: 15px;
+            overflow-y: auto;
+            background: #f9fafb;
+        }
 
-/* Input area */
-.chat-input {
-    display: flex;
-    border-top: 1px solid #ddd;
-}
+        .message {
+            max-width: 75%;
+            padding: 10px 14px;
+            margin: 8px 0;
+            border-radius: 14px;
+            font-size: 14px;
+            line-height: 1.4;
+        }
 
-.chat-input input {
-    flex: 1;
-    border: none;
-    padding: 12px;
-    font-size: 14px;
-    outline: none;
-}
+        .user {
+            background: #4f8cff;
+            color: white;
+            margin-left: auto;
+            border-bottom-right-radius: 4px;
+        }
 
-.chat-input button {
-    background: #4f8cff;
-    color: white;
-    border: none;
-    padding: 0 18px;
-    cursor: pointer;
-    font-weight: bold;
-}
-</style>
+        .bot {
+            background: #e5e7eb;
+            color: #111827;
+            margin-right: auto;
+            border-bottom-left-radius: 4px;
+        }
+
+        .input-area {
+            display: flex;
+            border-top: 1px solid #ddd;
+        }
+
+        input {
+            flex: 1;
+            border: none;
+            padding: 12px;
+            font-size: 14px;
+            outline: none;
+        }
+
+        button {
+            background: #4f8cff;
+            color: white;
+            border: none;
+            padding: 0 18px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background: #3b6fe0;
+        }
+    </style>
 </head>
-
 <body>
 
 <div class="chat-container">
     <div class="chat-header">🎓 VNR VJIET AI Assistant</div>
 
-    <div id="chat-box" class="chat-box">
-        <div class="bot-message">
-            Hello! Ask me anything about VNR VJIET college.
-        </div>
-    </div>
+    <div class="chat-box" id="chat-box"></div>
 
-    <div class="chat-input">
-        <input id="user-input" type="text" placeholder="Ask about VNR VJIET..." />
+    <div class="input-area">
+        <input type="text" id="user-input" placeholder="Ask about VNR VJIET..." />
         <button onclick="sendMessage()">Send</button>
     </div>
 </div>
@@ -123,49 +114,36 @@ body {
 <script>
 async function sendMessage() {
     const input = document.getElementById("user-input");
+    const chatBox = document.getElementById("chat-box");
     const message = input.value.trim();
+
     if (!message) return;
 
-    const chatBox = document.getElementById("chat-box");
-
-    // show user message
-    const userDiv = document.createElement("div");
-    userDiv.className = "user-message";
-    userDiv.textContent = message;
-    chatBox.appendChild(userDiv);
+    // Show user message
+    const userMsg = document.createElement("div");
+    userMsg.className = "message user";
+    userMsg.textContent = message;
+    chatBox.appendChild(userMsg);
 
     input.value = "";
+
+    // Send to backend
+    const response = await fetch("/chat", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ message })
+    });
+
+    const data = await response.json();
+
+    // Show bot reply
+    const botMsg = document.createElement("div");
+    botMsg.className = "message bot";
+    botMsg.textContent = data.reply;
+    chatBox.appendChild(botMsg);
+
     chatBox.scrollTop = chatBox.scrollHeight;
-
-    try {
-        const response = await fetch("/chat", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ message })
-        });
-
-        const data = await response.json();
-
-        const botDiv = document.createElement("div");
-        botDiv.className = "bot-message";
-        botDiv.textContent = data.reply;
-        chatBox.appendChild(botDiv);
-
-        chatBox.scrollTop = chatBox.scrollHeight;
-
-    } catch (error) {
-        const errDiv = document.createElement("div");
-        errDiv.className = "bot-message";
-        errDiv.textContent = "Error connecting to server.";
-        chatBox.appendChild(errDiv);
-    }
 }
-
-/* enter key support */
-document.getElementById("user-input")
-.addEventListener("keypress", function(e) {
-    if (e.key === "Enter") sendMessage();
-});
 </script>
 
 </body>
